@@ -1,5 +1,6 @@
 import { useParams, Route } from "react-router-dom";
 
+import NoQuotesFound from "../components/quotes/NoQuotesFound";
 import HighlightedQuote from '../components/quotes/HighlightedQuote';
 import Comments from '../components/comments/Comments';
 
@@ -22,7 +23,7 @@ const QuoteDetail = () => {
   const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId);
 
   if(!quote) {
-    return <p>No quote found!</p>
+    return <NoQuotesFound />
   }
   return (
     <section>
